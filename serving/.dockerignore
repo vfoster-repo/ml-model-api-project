@@ -1,0 +1,20 @@
+# Python cache
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# IDEs
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Docker files
+Dockerfile
+.dockerignore
+
+# Training charts aren't needed to serve predictions
+models/*.png
