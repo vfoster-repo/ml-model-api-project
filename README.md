@@ -8,6 +8,8 @@ A machine learning API that predicts passenger survival on the Titanic using a R
 
 In this project I trained a machine learning model from scratch, containerized it, and published it to Docker Hub. The model is trained inside a Jupyter Docker container, then served from a separate, lighter Docker container using FastAPI. Anyone with Docker can pull the image and get survival predictions for a Titanic passenger through a simple API.
 
+**Live Demo:** [Try the model in your browser](https://vfoster-repo.github.io/ml-model-api-project/)
+
 **Docker Hub:** [vfoster2docker/titanic-survival-api](https://hub.docker.com/r/vfoster2docker/titanic-survival-api)
 
 ## What This Demonstrates
@@ -27,6 +29,7 @@ In this project I trained a machine learning model from scratch, containerized i
 ### Professional Outcome
 - A complete ML deployment pipeline, from raw CSV to a public Docker image
 - An API that checks its input and gives a clear error for bad values instead of a wrong prediction
+- A live demo page where anyone can try the model, backed by the same Docker image running on my server
 - Updated the whole project from the 2023 course versions to current versions and fixed what broke
 
 ### Tools Utilized
@@ -112,7 +115,7 @@ The API checks these values before predicting. For example, `"Sex": "Male"` (cap
 
 ![Top 10 Feature Importance](training/models/feature_importance.png)
 
-The full training run, with all the output and charts, is in [`training/train_model.ipynb`](training/train_model.ipynb). You can also open `index.html` to see it in your browser.
+The full training run, with all the output and charts, is in [`training/train_model.ipynb`](training/train_model.ipynb). You can also open `notebook.html` to see it in your browser.
 
 ## Dataset
 
@@ -151,7 +154,8 @@ The model is trained on Kaggle's Titanic `train.csv`, saved as `training/data/ti
 ml-model-api-project/
 │
 ├── README.md
-├── index.html
+├── index.html          # Live demo page (form that calls the API)
+├── notebook.html       # Training notebook as a web page
 ├── training/
 │   ├── Dockerfile
 │   ├── requirements.txt
